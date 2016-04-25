@@ -1,0 +1,8 @@
+patch:
+        schema_list:
+                - schema: double_pinyin_mspy   # 微軟雙拼
+                - schema: emoji         # emoji表情
+                - schema: luna_pinyin          # 朙月拼音
+                - schema: cangjie5             # 倉頡五代
+                - schema: double_pinyin        # 自然碼雙拼
+                - schema: ipa_xsampa    # X-SAMPA 國際音標

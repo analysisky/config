@@ -1,0 +1,21 @@
+[options]
+verbose = 1
+read_all = False
+message_log = ~/.getmail/log
+
+[retriever]
+type = SimplePOP3SSLRetriever
+server = pop.gmail.com
+username = user@gmail.com
+port = 995
+password = passwd
+
+#[destination]
+#type = Maildir
+#path = ~/.mail/
+
+
+[destination]
+type = MDA_external
+path = /usr/bin/procmail
+unixfrom = true

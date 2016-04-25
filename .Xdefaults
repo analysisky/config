@@ -1,0 +1,70 @@
+Xcursor.theme: aerodrop
+Xcursor.size: 32
+!===============================
+!! - Setting for xterm
+!! --------------------
+XTerm*locale: true
+XTerm*utf8Title: true
+XTerm*fontMenu*fontdefault*Label: Default
+XTerm*xftAntialias: true
+XTerm*faceSize: 20
+!XTerm*faceNameDoublesize: WenQuanYi Zen Hei Mono:antialias=True:pixelsize=13
+XTerm*faceName: Monaco:antialias=True:pixelsize=14
+!XTerm*faceName: Unibit:antialias=True:pixelsize=12
+!XTerm*faceNameDoublesize: Unibit:antialias=True:pixelsize=12
+XTerm*faceSize1: 20
+XTerm*faceSize2: 20
+XTerm*faceSize3: 20
+XTerm*faceSize4: 20
+XTerm*faceSize5: 20
+XTerm*faceSize6: 20
+XTerm.cjkWidth: false
+XTerm*background: black
+XTerm*foreground: #00FFFF
+XTerm*scrollBar: true
+XTerm*rightScrollBar: true
+XTerm*jumpScroll: true
+XTerm*SaveLines: 3000
+*VT100*translations: override \n\
+Shift <KeyPress> Insert:insert-selection(CLIPBOARD, CUT_BUFFER1) \n\
+~Shift~Ctrl<Btn2Up>: insert-selection(PRIMARY, CUT_BUFFER0) \n\
+~Shift<BtnUp>: select-end(CLIPBOARD, CUT_BUFFER1) \n\
+~Shift<BtnUp>: select-end(PRIMARY, CUT_BUFFER0)
+!setting for urxvt  
+urxvt.visualBell: false
+!urxvt*inheritPixmap: true  
+!!urxvt*font: -misc-fixed-medium-r-normal-*-13-130-75-75-c-70-iso10646-1, \n\
+!!-wenquanyi-*-medium-r-normal-*-13-*-*-*-p-*-iso10646-1  
+Xft.dpi:96
+URxvt*termName: rxvt-unicode
+!urxvt*.transparent: true
+!urxvt*.shading: 24
+!!urxvt*font:xft:Liberation Sans:pixelsize=14
+urxvt*font:xft:Monaco:pixelsize=14
+!urxvt*font:xft:Source Code Pro:pixelsize=13
+urxvt*cursorBlink: true  
+urxvt*geometry:100X37  
+!urxvt*scrollBar_floating:true  
+!urxvt*scrollstyle:next  
+!urxvt*scrollTtyOutput:True  
+!urxvt*internalBorder:5
+!urxvt*externalBorder:35  
+!urxvt*fading: 80  
+!urxvt.shading: 60  
+urxvt*scrollBar: false
+urxvt*saveLines: 65535  
+urxvt*borderLess: false
+urxvt*colorBD: white 
+urxvt*colorIT: green 
+urxvt*colorUL: red
+urxvt*foreground: white
+urxvt*background: [60]black
+!urxvt.cursorColor: red3  
+urxvt*preeditType: Root  
+urxvt*perl-ext-common:default,tabbed  
+!urxvt*tabbed.tab-fg:gray25  
+!urxvt*tabbed.tab-bg:gray85  
+!urxvt*tabbed.tabbar-fg:4  
+!urxvt*modifier: 
+urxvt*depth: 32
+urxvt.inputMethod:fcitx

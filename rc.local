@@ -1,0 +1,8 @@
+#!/bin/bash
+#ss-local -c /etc/vps.json -u&
+ss-local -c /etc/do.json -u --fast-open&
+echo 1 > /sys/module/snd_hda_intel/parameters/power_save
+ethtool -s eth0 wol d
+iw dev wlan0 set power_save on
+sh /usr/bin/iptables.sh
+exit 0

@@ -1,0 +1,49 @@
+PATH=/bin:/usr/bin:/usr/local/bin
+MAILDIR=$HOME/.mail
+DEFAULT=$MAILDIR/inbox/
+LOGFILE=$MAILDIR/.procmaillog
+
+:0
+* ^User-Agent: rss2email
+{
+	:0
+	* ^X-RSS-Feed.*rss_gn
+	gn/
+	
+	:0
+	* ^X-RSS-Feed.*rss_gj
+	gj/
+	
+	:0
+	* ^X-RSS-Feed.*jandan
+	jandan/
+
+	:0
+	* ^X-RSS-Feed.*solidot
+	solidot/
+	
+	:0
+	* ^X-Rss-Feed.*coolshell
+	coolshell/
+}
+
+:0
+* ^To.*qq1
+qq1/
+
+:0
+* ^To.*qq2
+qq2/
+
+:0
+* ^From.*arch-general
+arch-general/
+
+:0
+* ^From.*gentoo
+gentoo/
+
+:0
+inbox/
+
+

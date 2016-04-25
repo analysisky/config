@@ -1,0 +1,140 @@
+# Use Xft?
+use_xft yes
+xftfont WenQuanYi Micro Hei Mono:size=9
+xftalpha 0.8
+text_buffer_size 2048
+
+# Update interval in seconds
+update_interval 3
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_argb_visual yes
+own_window_transparent yes
+#own_window_argb_value 0
+own_window_type  normal
+own_window_class Conky
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+background yes
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size   250 0
+maximum_width 300
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+
+# Stippled borders?
+stippled_borders 0
+
+# border margins
+border_inner_margin 5
+
+# border width
+border_width 1
+
+# Default colors and also border colors
+default_color white
+#default_shade_color black
+#default_outline_color black
+#own_window_colour white
+#color1 black
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 5
+gap_y 10
+
+# Subtract file system buffers from used memory?
+no_buffers  yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 4
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+#use_spacer false
+
+TEXT
+
+${font Goudy Bookletter 1911:style=Bold}SYSTEM${font} ${hr 2}
+
+${font WenQuanYi Micro Hei Mono:size=10}xmms2状态${alignr}${xmms2_status}${font}
+${xmms2_smart}
+${xmms2_bar 10,200}${alignr}${xmms2_elapsed}/${xmms2_percent}%
+
+#${alignc 17}${font Sniglet:size=16}googly${font}
+#${alignc}${font Comfortaa:size=10}fly, you fools${font}
+内核:    ${alignr}${kernel}
+#CPU1:   ${cpu cpu1}% ${alignr}
+CPU:	 ${alignr}${cpu cpu}%
+频率:    ${alignr}${freq}MHz
+内存:	 ${alignr}${memperc}%
+#虚拟内存:${alignr}${swapperc}% 
+电池:    ${alignr}${battery_percent BAT0}%
+CPU温度: ${alignr}${acpitemp}°C
+#GPU温度: ${alignr}${exec aticonfig --odgt|grep Sensor|cut -c 42-44}°C
+GPU温度: ${alignr}${exec cat /sys/class/hwmon/hwmon2/temp1_input|cut -c 1-2}°C
+硬盘温度:${alignr}${exec hddtemp /dev/sda |cut -c 24-28}
+硬盘读取:${alignr}${diskio_read}
+硬盘写入:${alignr}${diskio_write}
+运行时间:${alignr}${uptime}
+gmail ${unseen_mails .mail/inbox 60}${alignr}qq ${unseen_mails .mail/qq 60}
+jandan ${unseen_mails .mail/jandan 60}${alignr}Solidot ${unseen_mails .mail/solidot 60}
+国内新闻 ${unseen_mails .mail/gn 60}${alignr}国际新闻 ${unseen_mails .mail/gj 60}
+
+${font Goudy Bookletter 1911:style=Bold}HD${font} ${hr 2}
+${font :size=12}/${font}
+${voffset 4}${fs_used /}/${fs_size /} ${alignr}${fs_bar 8,60 /}
+${font :size=12}/home${font}
+${voffset 4}${fs_used /home}/${fs_size /home} ${alignr}${fs_bar 8,60 /home}
+
+${font Goudy Bookletter 1911:style=Bold}PROCESSES${font} ${hr 2}
+NAME $alignr PID    CPU
+${top name 1} $alignr ${top pid 1} ${top cpu 1}
+${top name 2} $alignr ${top pid 2} ${top cpu 2}
+${top name 3} $alignr ${top pid 3} ${top cpu 3}
+${top name 4} $alignr ${top pid 4} ${top cpu 4}
+${top name 5} $alignr ${top pid 5} ${top cpu 5}
+${top name 6} $alignr ${top pid 6} ${top cpu 6}
+
+${font Goudy Bookletter 1911:style=Bold}WIRELESS${font} ${hr 2}
+上行:           ${alignr}${upspeed wlan0}
+下行:           ${alignr}${downspeed wlan0}
+上传:           ${alignr}${totalup wlan0}
+下载:           ${alignr}${totaldown wlan0}
+信号强度:       ${alignr}${wireless_link_qual wlan0}%
+#${font Goudy Bookletter 1911:style=Bold}WIRELESS${font} ${hr 2}
+#Up: ${upspeed eth0} ${alignr}${upspeedgraph eth0 8,60 000000 000000}
+#Down: ${downspeed eth0} ${alignr}${downspeedgraph eth0 8,60 000000 000000}
+#Upload: ${alignr}${totalup eth0}
+#Download: ${alignr}${totaldown eth0}

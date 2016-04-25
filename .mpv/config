@@ -1,0 +1,9 @@
+# Write your default config options here!
+#vo=vaapi
+hwdec=vaapi
+ao=alsa
+channels=2
+title="${filename}"
+slang = chs,chi
+ass=yes
+fs=yes
